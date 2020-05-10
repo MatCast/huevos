@@ -1,0 +1,42 @@
+.add {
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    height: 0.5em;
+    width: 0.5em;
+    border-radius: 50%;
+    border: 1px solid rgb(90, 90, 90);
+    padding: 0.15em;
+    font-size: 1rem;
+    margin: 2px;
+    background-color: darkgray;
+    color: rgb(90, 90, 90);
+    font-weight: bold;
+}
+
+.add:hover {
+    background-color: rgb(221, 221, 221);
+    cursor: pointer;
+}
+
+.add:focus {
+    background-color: rgb(221, 221, 221);
+}
+
+.input-wrapper {
+    font-size: 0;
+}
+
+.add.plus::before {
+    content: '+';
+}
+
+.add.minus::before {
+    content: '\2212';
+}
+
+input {
+    margin: 0;
+    padding: 0;
+    max-width: 30px;
+}
