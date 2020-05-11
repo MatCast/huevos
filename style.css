@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 html {
-  font-size: x-large;
+  font-size: 28px;
   height: 98vh;
 }
 
@@ -17,34 +17,66 @@ body {
   justify-content: center;
   align-items: center;
   display: inline-flex;
-  height: 0.5em;
-  width: 0.5em;
+  height: 1em;
+  width: 1em;
   border-radius: 50%;
-  border: 1px solid rgb(90, 90, 90);
+  border: 1px solid #2fb6eb;
   padding: 0.15em;
   font-size: 1rem;
   margin: 2px;
-  background-color: darkgray;
-  color: rgb(90, 90, 90);
+  background-color: inherit;
   font-weight: bold;
+  position: relative;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 .add:hover {
-  background-color: rgb(221, 221, 221);
+  background-color: #2fb6eb22;
   cursor: pointer;
 }
 
 .add:focus {
-  background-color: rgb(221, 221, 221);
+  background-color: #2fb6eb22;
   outline: none;
 }
 
-.add.plus::before {
-  content: "+";
+.add.plus::after {
+  content: " ";
+  position: absolute;
+  display: block;
+  background-color: #2fb6eb;
+  height: 2px;
+  margin-top: -1px;
+  top: 50%;
+  left: 5px;
+  right: 5px;
+  z-index: 9;
 }
 
-.add.minus::before {
-  content: "\2212";
+.add.plus::before {
+  content: " ";
+  position: absolute;
+  display: block;
+  background-color: #2fb6eb;
+  width: 2px;
+  margin-left: -1px;
+  left: 50%;
+  top: 5px;
+  bottom: 5px;
+  z-index: 9;
+}
+
+.add.minus::after {
+  content: " ";
+  position: absolute;
+  display: block;
+  background-color: #2fb6eb;
+  height: 2px;
+  margin-top: -1px;
+  top: 50%;
+  left: 5px;
+  right: 5px;
+  z-index: 9;
 }
 
 .inputs-wrapper {
