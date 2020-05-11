@@ -13,6 +13,59 @@ body {
   height: 100%;
   font-family: "Reem Kufi", sans-serif;
 }
+
+input {
+  margin: 0;
+  padding: 0;
+  max-width: 30px;
+  border: none;
+  background-color: inherit;
+  font-size: 1rem;
+  font-family: inherit;
+  text-align: center;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.page-inputs {
+  display: flex;
+  justify-content: center;
+  /* line-height: 36px; */
+}
+
+.inputs-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  width: 70%;
+}
+
+.label {
+  grid-column-start: 1;
+}
+
+.increments {
+  display: flex;
+  grid-column-start: 2;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  border-bottom: 1px solid #000000;
+  height: 50px;
+}
+
 .add {
   justify-content: center;
   align-items: center;
@@ -77,56 +130,4 @@ body {
   left: 5px;
   right: 5px;
   z-index: 9;
-}
-
-.inputs-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  width: 70%;
-}
-
-.label {
-  grid-column-start: 1;
-}
-
-.increments {
-  display: flex;
-  grid-column-start: 2;
-  justify-content: center;
-  align-items: center;
-}
-
-.row {
-  border-bottom: 1px solid #000000;
-  height: 50px;
-}
-
-input {
-  margin: 0;
-  padding: 0;
-  max-width: 30px;
-  border: none;
-  background-color: inherit;
-  font-size: 1rem;
-  font-family: inherit;
-  text-align: center;
-}
-
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-
-.page-inputs {
-  display: flex;
-  justify-content: center;
-  /* line-height: 36px; */
 }
