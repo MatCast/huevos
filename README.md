@@ -16,7 +16,7 @@ Go to https://code.visualstudio.com/ and download. Follow the instructions and y
 
 ## Install django.
 
-(django)[https://www.djangoproject.com/] is a web framework to create web applications with python.
+[django](https://www.djangoproject.com/) is a web framework to create web applications with python.
 
 Open the anaconda prompt (in the windows search bar: write Anaconda and then select Anaconda Prompt)
 
