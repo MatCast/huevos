@@ -14,7 +14,9 @@ This is not 100% necessery but it's a very nice tool to write code in general.
 
 Go to https://code.visualstudio.com/ and download. Follow the instructions and you should be ready to go.
 
-## Create a virtual enviroment and install django.
+## Install django.
+
+(django)[https://www.djangoproject.com/] is a web framework to create web applications with python.
 
 Open the anaconda prompt (in the windows search bar: write Anaconda and then select Anaconda Prompt)
 
