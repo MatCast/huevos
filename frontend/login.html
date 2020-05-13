@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% block content %}
+    <div class="ui middle aligned center aligned grid">
+        <div class="sixteen wide column">
+            <div class="login">
+                <h2 class="ui pink image header">
+                    <img src="{% static 'mypinkdata/image/favicon.png' %}" class="image" href="{% url 'login' %}">
+                    <div class="content">
+                        Log-in to your account
+                    </div>
+                </h2>
+                <form class="ui large form" method="post">
+                    {% csrf_token %}
+                    <div class="ui stacked segment">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                {{ form.username }}
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="lock icon"></i>
+                                {{ form.password }}
+                            </div>
+                        </div>
+                        <button type="submit" class="ui fluid large pink submit button">Login</button>
+                    </div>
+                    <div>
+                        {% if form.non_field_errors %}
+                        <div class="ui negative message">
+                            {% for error in form.non_field_errors %}
+                            {{ error }}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

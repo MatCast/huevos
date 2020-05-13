@@ -89,4 +89,4 @@ class Sale(models.Model):
 
     def total(self):
         """Return the total price of the sold eggs."""
-        return self.sold * self.price
+        pass
