@@ -39,7 +39,7 @@ class EggsCount(models.Model):
     broken = models.IntegerField(default=0)
     pecked = models.IntegerField(default=0)
     date = models.DateField('Date', default=datetime.date.today)
-    farm = models.ForeignKey(Farm, unique=True, on_delete=models.CASCADE)
+    farm = models.ForeignKey(Farm, unique=False, on_delete=models.CASCADE)
 
     class Meta:
         """Meta definition for EggsCount."""
@@ -68,7 +68,7 @@ class Sale(models.Model):
     used = models.IntegerField(verbose_name='Gebrauchter Eier', default=0)
     price = models.FloatField(verbose_name='Eier Preise', default=0.3)
     date = models.DateField('Date', default=datetime.date.today)
-    farm = models.ForeignKey(Farm, unique=True, on_delete=models.CASCADE)
+    farm = models.ForeignKey(Farm, unique=False, on_delete=models.CASCADE)
 
     class Meta:
         """Meta definition for Sale."""
@@ -127,8 +127,9 @@ class FoodCount(models.Model):
 
     used = models.FloatField(verbose_name='Verbrauch', default=0.0)
     date = models.DateField('Date', default=datetime.date.today)
-    farm = models.ForeignKey(Farm, unique=True, on_delete=models.CASCADE)
-    stroage = models.ForeignKey(Storage, unique=True, on_delete=models.CASCADE)
+    farm = models.ForeignKey(Farm, unique=False, on_delete=models.CASCADE)
+    stroage = models.ForeignKey(
+        Storage, unique=False, on_delete=models.CASCADE)
 
     class Meta:
         """Meta definition for FoodCount."""
