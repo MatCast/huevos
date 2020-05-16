@@ -93,27 +93,59 @@ class Sale(models.Model):
         pass
 
 
-class Food(models.Model):
-    """Model definition for Food."""
+class Storage(models.Model):
+    """Model definition for Storage."""
 
-    # TODO: Define fields here
+    quantity = models.FloatField(verbose_name='Lagerstand', default=0.0)
+    date = models.DateField('Date', default=datetime.date.today)
+    price = models.FloatField(verbose_name='Eier Preise', default=3.0)
+    farm = models.ForeignKey(Farm, unique=False, on_delete=models.CASCADE)
 
     class Meta:
-        """Meta definition for Food."""
+        """Meta definition for Storage."""
 
-        verbose_name = 'Food'
-        verbose_name_plural = 'Foods'
+        verbose_name = 'Storage'
+        verbose_name_plural = 'Storages'
 
     def __str__(self):
-        """Unicode representation of Food."""
+        """Unicode representation of Storage."""
         pass
 
     def save(self):
-        """Save method for Food."""
+        """Save method for Storage."""
         pass
 
     def get_absolute_url(self):
-        """Return absolute url for Food."""
+        """Return absolute url for Storage."""
+        return ('')
+
+    # TODO: Define custom methods here
+
+
+class FoodCount(models.Model):
+    """Model definition for FoodCount."""
+
+    used = models.FloatField(verbose_name='Verbrauch', default=0.0)
+    date = models.DateField('Date', default=datetime.date.today)
+    farm = models.ForeignKey(Farm, unique=True, on_delete=models.CASCADE)
+    stroage = models.ForeignKey(Storage, unique=True, on_delete=models.CASCADE)
+
+    class Meta:
+        """Meta definition for FoodCount."""
+
+        verbose_name = 'FoodCount'
+        verbose_name_plural = 'FoodCounts'
+
+    def __str__(self):
+        """Unicode representation of FoodCount."""
+        pass
+
+    def save(self):
+        """Save method for FoodCount."""
+        pass
+
+    def get_absolute_url(self):
+        """Return absolute url for FoodCount."""
         return ('')
 
     # TODO: Define custom methods here
