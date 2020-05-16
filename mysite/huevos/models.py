@@ -32,29 +32,30 @@ class Farm(models.Model):
     # TODO: Define custom methods here
 
 
-class Eggs(models.Model):
-    """Model definition for Eggs."""
+class EggsCount(models.Model):
+    """Model definition for EggsCount."""
 
     layed = models.IntegerField(default=0)
     broken = models.IntegerField(default=0)
     pecked = models.IntegerField(default=0)
     date = models.DateField('Date', default=datetime.date.today)
+    farm = models.ForeignKey(Farm, unique=True, on_delete=models.CASCADE)
 
     class Meta:
-        """Meta definition for Eggs."""
+        """Meta definition for EggsCount."""
 
-        verbose_name = 'Eggs'
+        verbose_name = 'EggsCount'
 
     def __str__(self):
-        """Unicode representation of Eggs."""
+        """Unicode representation of EggsCount."""
         pass
 
     def save(self):
-        """Save method for Eggs."""
+        """Save method for EggsCount."""
         pass
 
     def get_absolute_url(self):
-        """Return absolute url for Eggs."""
+        """Return absolute url for EggsCount."""
         return ('')
 
     # TODO: Define custom methods here
@@ -67,7 +68,7 @@ class Sale(models.Model):
     used = models.IntegerField(verbose_name='Gebrauchter Eier', default=0)
     price = models.FloatField(verbose_name='Eier Preise', default=0.3)
     date = models.DateField('Date', default=datetime.date.today)
-    FIELDNAME = models.DateField(, auto_now=False, auto_now_add=False)
+    farm = models.ForeignKey(Farm, unique=True, on_delete=models.CASCADE)
 
     class Meta:
         """Meta definition for Sale."""
@@ -77,8 +78,7 @@ class Sale(models.Model):
 
     def __str__(self):
         """Unicode representation of Sale."""
-        date = self.date.strftime('%Y-%m-%d')
-        return f'{date}: {self.total}'
+        pass
 
     def save(self):
         """Save method for Sale."""
@@ -91,3 +91,29 @@ class Sale(models.Model):
     def total(self):
         """Return the total price of the sold eggs."""
         pass
+
+
+class Food(models.Model):
+    """Model definition for Food."""
+
+    # TODO: Define fields here
+
+    class Meta:
+        """Meta definition for Food."""
+
+        verbose_name = 'Food'
+        verbose_name_plural = 'Foods'
+
+    def __str__(self):
+        """Unicode representation of Food."""
+        pass
+
+    def save(self):
+        """Save method for Food."""
+        pass
+
+    def get_absolute_url(self):
+        """Return absolute url for Food."""
+        return ('')
+
+    # TODO: Define custom methods here
