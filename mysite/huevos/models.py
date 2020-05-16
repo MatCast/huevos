@@ -67,6 +67,7 @@ class Sale(models.Model):
     used = models.IntegerField(verbose_name='Gebrauchter Eier', default=0)
     price = models.FloatField(verbose_name='Eier Preise', default=0.3)
     date = models.DateField('Date', default=datetime.date.today)
+    FIELDNAME = models.DateField(, auto_now=False, auto_now_add=False)
 
     class Meta:
         """Meta definition for Sale."""
