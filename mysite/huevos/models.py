@@ -21,9 +21,9 @@ class Farm(models.Model):
         """Unicode representation of Farm."""
         return f'{self.name}'
 
-    def save(self):
-        """Save method for Farm."""
-        pass
+    # def save(self):
+    #     """Save method for Farm."""
+    #     pass
 
     def get_absolute_url(self):
         """Return absolute url for Farm."""
@@ -50,9 +50,9 @@ class EggsCount(models.Model):
         """Unicode representation of EggsCount."""
         pass
 
-    def save(self):
-        """Save method for EggsCount."""
-        pass
+    # def save(self):
+    #     """Save method for EggsCount."""
+    #     pass
 
     def get_absolute_url(self):
         """Return absolute url for EggsCount."""
@@ -80,9 +80,9 @@ class Sale(models.Model):
         """Unicode representation of Sale."""
         pass
 
-    def save(self):
-        """Save method for Sale."""
-        pass
+    # def save(self):
+    #     """Save method for Sale."""
+    #     pass
 
     def get_absolute_url(self):
         """Return absolute url for Sale."""
@@ -111,9 +111,9 @@ class Storage(models.Model):
         """Unicode representation of Storage."""
         pass
 
-    def save(self):
-        """Save method for Storage."""
-        pass
+    # def save(self):
+    #     """Save method for Storage."""
+    #     pass
 
     def get_absolute_url(self):
         """Return absolute url for Storage."""
