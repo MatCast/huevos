@@ -150,3 +150,7 @@ class FoodCount(models.Model):
         return ('')
 
     # TODO: Define custom methods here
+
+# TODO:
+# Methods to delete record
+# Method to count sales etc
